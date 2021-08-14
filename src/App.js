@@ -1,11 +1,11 @@
 import logo from "./logo.svg";
-import "./App.scss";
+import "./style.scss";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h2>Yosemite</h2>
+      {/* <header className="App-header">
+        <h4>Yosemite</h4>
         <div className="right">
           <p>Cart</p>
           <p>Sign-In</p>
@@ -19,6 +19,9 @@ function App() {
           <li>Product 4</li>
         </ul>
       </section>
+      <footer>
+        <p>All rights reserved.</p>
+      </footer> */}
     </div>
   );
 }
