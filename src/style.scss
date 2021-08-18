@@ -1,3 +1,5 @@
+@import "styles/product.scss";
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -35,6 +37,14 @@ footer {
   color: white;
 }
 // Common
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
 a {
   text-decoration: none;
   &:hover {
