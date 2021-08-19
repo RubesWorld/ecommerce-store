@@ -1,27 +1,62 @@
 import logo from "./logo.svg";
 import "./style.scss";
 
+//component import
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import ProductCard from "./Components/ProductCard";
+
+//data import
+import data from "./data.js";
+
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <h4>Yosemite</h4>
-        <div className="right">
-          <p>Cart</p>
-          <p>Sign-In</p>
+      <Header />
+      <main>
+        <div>
+          {data.products.map((product) => (
+            <div>
+              <div className="row center">
+                <div className="card">
+                  <a href={`/product/${product.id}`}>
+                    <img
+                      className="medium"
+                      src={product.image}
+                      alt={product.name}
+                    />
+                  </a>
+                  <div className="card-body">
+                    <a href={`/product/${product.id}`}>
+                      <h2>{product.name}</h2>
+                    </a>
+                    <div className="rating">
+                      <span>
+                        <i className="fa fa-star"></i>
+                      </span>
+                      <span>
+                        <i className="fa fa-star"></i>
+                      </span>
+                      <span>
+                        <i className="fa fa-star"></i>
+                      </span>
+                      <span>
+                        <i className="fa fa-star"></i>
+                      </span>
+                      <span>
+                        <i className="fa fa-star"></i>
+                      </span>
+                    </div>
+                    <div className="price">${product.price}</div>
+                  </div>
+                </div>
+              </div>
+              {/* <ProductCard key={product.id} product={product} /> */}
+            </div>
+          ))}
         </div>
-      </header>
-      <section>
-        <ul>
-          <li>Product 1</li>
-          <li>Product 2</li>
-          <li>Product 3</li>
-          <li>Product 4</li>
-        </ul>
-      </section>
-      <footer>
-        <p>All rights reserved.</p>
-      </footer> */}
+      </main>
+      <Footer />
     </div>
   );
 }
