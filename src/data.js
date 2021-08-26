@@ -1,10 +1,16 @@
+import image1 from "./images/product1.jpg";
+import image2 from "./images/product2.jpg";
+import image3 from "./images/product3.jpg";
+import image4 from "./images/product4.jpg";
+import image5 from "./images/product5.jpg";
+
 const data = {
   products: [
     {
       id: "1",
       name: "Jean Jacket",
       category: "Jackets",
-      image: "../public/images/product1.jpg",
+      image: image1,
       price: 100,
       brand: "Levi",
       rating: 4.0,
@@ -15,7 +21,7 @@ const data = {
       id: "2",
       name: "Jean Pants",
       category: "Bottoms",
-      image: "public/images/product2.jpg",
+      image: image2,
       price: 75,
       brand: "Levi",
       rating: 5.0,
@@ -26,7 +32,7 @@ const data = {
       id: "3",
       name: "Leather Jacket",
       category: "Jackets",
-      image: "public/images/product3.jpg",
+      image: image3,
       price: 70,
       brand: "Levi",
       rating: 4.5,
@@ -37,7 +43,7 @@ const data = {
       id: "4",
       name: "Leather Boots",
       category: "Shoes",
-      image: "public/images/product4.jpg",
+      image: image4,
       price: 65,
       brand: "Levi",
       rating: 4.0,
@@ -48,7 +54,7 @@ const data = {
       id: "5",
       name: "Leather Belt",
       category: "Accessories",
-      image: "public/images/product5.jpg",
+      image: image5,
       price: 25,
       brand: "Levi",
       rating: 4.5,
