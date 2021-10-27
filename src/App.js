@@ -11,13 +11,15 @@ import data from "./data.js";
 
 function App() {
   return (
-    <div className="App">
+    <div className="grid-container">
       <Header />
       <main>
         <div>
-          {data.products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          <div className="row center">
+            {data.products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       </main>
       <Footer />
