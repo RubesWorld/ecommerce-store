@@ -1,32 +1,36 @@
 import logo from "./logo.svg";
 import "./style.scss";
-import {BrowserRouter} from 'react-router-dom'
+import { BrowserRouter, Route } from "react-router-dom";
 
 //component import
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import ProductCard from "./Components/ProductCard";
-
-//data import
-import data from "./data.js";
+import HomeScreen from "./Pages/HomeScreen";
+import ProductScreen from "./Pages/ProductScreen";
 
 function App() {
   return (
     <BrowserRouter>
-  
-    <div className="grid-container">
-      <Header />
-      <main>
-        <div>
-          <div className="row center">
-            {data.products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+      <div className="grid-container">
+        {/* <Header /> */}
+        <header className="row">
+          <div>
+            <a className="brand" href="/">
+              amazona
+            </a>
           </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
+          <div>
+            <a href="/cart">Cart</a>
+            <a href="/signin">Sign In</a>
+          </div>
+        </header>
+        <main>
+          <Route path="/product/:id" component={ProductScreen}></Route>
+          <Route path="/" component={HomeScreen} exact></Route>
+        </main>
+        <footer className="row center">All right reserved</footer>
+        {/* <Footer /> */}
+      </div>
     </BrowserRouter>
   );
 }
