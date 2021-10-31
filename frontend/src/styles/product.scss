@@ -49,3 +49,19 @@ img.large {
 .error {
   color: #a02020;
 }
+
+.danger {
+  padding: 1rem;
+  border: 0.1 solid transparent;
+  border-radius: 0.5 rem;
+}
+
+.alert-info {
+  color: #2020a0;
+  background-color: #e0f0f0;
+}
+
+.alert-danger {
+  color: #a020a0;
+  background-color: #ffe0e0e0;
+}

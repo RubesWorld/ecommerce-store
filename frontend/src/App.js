@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
 import "./style.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 
 //component import
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+// import Header from "./Components/Header";
+// import Footer from "./Components/Footer";
 import HomeScreen from "./Pages/HomeScreen";
 import ProductScreen from "./Pages/ProductScreen";
 

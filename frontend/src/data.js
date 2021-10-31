@@ -1,8 +1,8 @@
-import image1 from "./images/product1.jpg";
-import image2 from "./images/product2.jpg";
-import image3 from "./images/product3.jpg";
-import image4 from "./images/product4.jpg";
-import image5 from "./images/product5.jpg";
+import image1 from "./images/p1.jpg";
+import image2 from "./images/p2.jpg";
+import image3 from "./images/p3.jpg";
+import image4 from "./images/p4.jpg";
+import image5 from "./images/p5.jpg";
 
 const data = {
   products: [
