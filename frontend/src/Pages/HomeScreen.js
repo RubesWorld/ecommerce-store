@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Loading from "../Components/Loading.js";
+import MessageBox from "../Components/MessageBox.js";
 import ProductCard from "../Components/ProductCard.js";
-//data import
-import data from "../data.js";
 
 function HomeScreen() {
   const [products, setProducts] = useState([]);
@@ -31,7 +32,7 @@ function HomeScreen() {
     return (
       <div>
         <div className="row center">
-          {data.products.map((product) => (
+          {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
