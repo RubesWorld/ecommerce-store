@@ -4,6 +4,10 @@ export const PRODUCT_LIST_REQUEST = "PRODUCT_LIST_REQUEST";
 export const PRODUCT_LIST_SUCCESS = "PRODUCT_LIST_SUCCESS";
 export const PRODUCT_LIST_FAIL = "PRODUCT_LIST_FAIL";
 
+const PRODUCT_DETAILS_REQUEST = "PRODUCT_DETAILS_REQUEST";
+const PRODUCT_DETAILS_SUCCESS = "PRODUCT_DETAILS_SUCCESS";
+const PRODUCT_DETAILS_FAIL = "PRODUCT_DETAILS_FAIL";
+
 export const listProducts = () => async (dispatch) => {
   dispatch({ type: PRODUCT_LIST_REQUEST });
   try {
@@ -14,13 +18,18 @@ export const listProducts = () => async (dispatch) => {
   }
 };
 
-//   axios
-//     .get("/api/products")
-//     .then((res) => {
-//       console.log("products", res.data);
-//       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: res.data });
-//     })
-//     .catch((err) => {
-//       console.log("ERROR", err);
-//     });
-// };
+export const productDetails = (productId) => async (dispatch) => {
+  dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
+  try {
+    const { data } = axios.get(`/api/products/${productId}`);
+    dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_DETAILS_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.mess
+          : error.message,
+    });
+  }
+};
