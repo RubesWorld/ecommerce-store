@@ -6,6 +6,7 @@ import {
 
 const initialState = {
   products: [],
+  loading: true,
 };
 
 export const productListReducer = (state = initialState, action) => {
