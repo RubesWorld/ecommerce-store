@@ -6,6 +6,7 @@ const initialState = {};
 
 const reducer = combineReducers({
   productList: productListReducer,
+  productDetails: productListReducer,
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

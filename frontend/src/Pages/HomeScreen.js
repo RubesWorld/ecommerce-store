@@ -14,21 +14,23 @@ function HomeScreen() {
     dispatch(listProducts());
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  } else if (error) {
-    return <MessageBox variant="danger">{error}</MessageBox>;
-  } else {
-    return (
-      <div>
-        <div className="row center">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+  return (
+    <div>
+      {loading ? (
+        <Loading />
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <div>
+          <div className="row center">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
-      </div>
-    );
-  }
+      )}
+    </div>
+  );
 }
 
 export default HomeScreen;
