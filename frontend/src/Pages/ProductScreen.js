@@ -1,13 +1,21 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Loading from "../Components/Loading";
 import MessageBox from "../Components/MessageBox";
 import Rating from "../Components/Rating";
+import { getProductDetails } from "../redux/actions/ProductActions";
 
 function ProductScreen(props) {
+  const dispatch = useDispatch();
+  const productId = props.match.params.id;
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+  console.log("product", product);
+
+  useEffect(() => {
+    dispatch(getProductDetails(productId));
+  }, [dispatch, productId]);
 
   return (
     <div>
@@ -33,7 +41,7 @@ function ProductScreen(props) {
                     numReviews={product.numReviews}
                   />
                 </li>
-                <li>Price: {product.price}</li>
+                <li>Price: ${product.price}</li>
                 <li>Description:</li>
                 <li>{product.description}</li>
                 <li>Images</li>

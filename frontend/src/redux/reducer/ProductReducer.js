@@ -8,8 +8,9 @@ import {
 } from "../actions/ProductActions";
 
 const initialState = {
-  products: [],
   loading: true,
+  products: [],
+  product: {},
 };
 
 export const productListReducer = (state = initialState, action) => {
@@ -40,9 +41,15 @@ export const productDetailsReducer = (state = initialState, action) => {
         loading: true,
       };
     case PRODUCT_DETAILS_SUCCESS:
-      return { loading: false, product: action.payload };
+      return {
+        loading: false,
+        product: action.payload,
+      };
     case PRODUCT_DETAILS_FAIL:
-      return { loading: false, error: action.payload };
+      return {
+        loading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }
