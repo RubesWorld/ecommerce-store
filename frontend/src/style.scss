@@ -1,5 +1,4 @@
 @import "styles/product.scss";
-@import "styles/screenpage.scss";
 
 html {
   font-size: 62.5%;
@@ -68,6 +67,9 @@ li {
   margin-top: 1rem;
 }
 
+input,
+select,
+textarea,
 button {
   padding: 1rem;
   border-radius: 0.5rem;
@@ -76,11 +78,15 @@ button {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightgray;
-  cursor: pointer;
+
   &:hover {
     border: solid black 1px;
   }
+}
+
+button {
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 button.primary {
