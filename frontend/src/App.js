@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./style.scss";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 //component import
 import Header from "./Components/Header";
@@ -16,13 +16,13 @@ function App() {
         {/* <Header /> */}
         <header className="row">
           <div>
-            <a className="brand" href="/">
+            <Link className="brand" to="/">
               Yosemite
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="/cart">Cart</a>
-            <a href="/signin">Sign In</a>
+            <Link to="/cart">Cart</Link>
+            <Link to="/signin">Sign In</Link>
           </div>
         </header>
         <main>
